@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    {% csrf_token %}
+    <title>Journey map</title>
+    <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
+    
+    <body>
+        <div class="top-header">
+            <h3 class="logo">Journey map</h3>
+            <a href="{% url 'logout' %}"><h3 class="logout">ログアウト</h3></a>
+            <h3 class="login-btn">ようこそ：{{ user.get_username }}さん</h3>
+        </div>
+
+        <table class="jp-map">
+            <tbody>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="hokkaido" colspan="3" rowspan="3" ><a href="#">北海道</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="tohoku" colspan="2"><a href="#">青森</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="tohoku"><a href="#">秋田</a></td>
+            <td class="tohoku"><a href="#">岩手</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="tohoku"><a href="#">山形</a></td>
+            <td class="tohoku"><a href="#">宮崎</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="chubu"><a href="#">石川</a></td>
+            <td class="chubu"><a href="#">富山</a></td>
+            <td class="chubu"><a href="#">新潟</a></td>
+            <td class="tohoku" colspan="2"><a href="#">福島</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="chubu"><a href="#">福井</a></td>
+            <td class="chubu" rowspan="2"><a href="#">岐阜</a></td>
+            <td class="chubu" rowspan="2"><a href="#">長野</a></td>
+            <td class="kanto"><a href="#">群馬</a></td>
+            <td class="kanto"><a href="#">栃木</a></td>
+            </tr>
+            <tr>
+            <td class="kyushu"><a href="#">佐賀</a></td>
+            <td class="kyushu"><a href="#">福岡</a></td>
+            <td class="kyushu"><a href="#">大分</a></td>
+            <td class="chugoku" rowspan="2"><a href="#">山口</a></td>
+            <td class="chugoku"><a href="#">島根</a></td>
+            <td class="chugoku"><a href="#">鳥取</a></td>
+            <td class="kinki"><a href="#">兵庫</a></td>
+            <td class="kinki"><a href="#">京都</a></td>
+            <td class="kinki"><a href="#">滋賀</a></td>
+            <td class="kanto"><a href="#">埼玉</a></td>
+            <td class="kanto"><a href="#">茨城</a></td>
+            </tr>
+            <tr>
+            <td class="kyushu"><a href="#">長崎</a></td>
+            <td class="kyushu" rowspan="2"><a href="#">熊本</a></td>
+            <td class="kyushu" rowspan="2"><a href="#">宮崎</a></td>
+            <td class="chugoku"><a href="#">広島</a></td>
+            <td class="chugoku"><a href="#">岡山</a></td>
+            <td class="kinki"><a href="#">大阪</a></td>
+            <td class="kinki"><a href="#">奈良</a></td>
+            <td class="kinki"><a href="#">三重</a></td>
+            <td class="chubu"><a href="#">愛知</a></td>
+            <td class="chubu"><a href="#">山梨</a></td>
+            <td class="kanto"><a href="#">東京都</a></td>
+            <td class="kanto" rowspan="2"><a href="#">千葉</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td class="shikoku"><a href="#">愛媛</a></td>
+            <td class="shikoku"><a href="#">香川</a></td>
+            <td></td>
+            <td class="kinki" colspan="2"><a href="#">和歌山</a></td>
+            <td></td>
+            <td></td>
+            <td class="chubu"><a href="#">静岡</a></td>
+            <td class="kanto"><a href="#">神奈川</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td class="kyushu" colspan="2"><a href="#">鹿児島</a></td>
+            <td class="shikoku"><a href="#">高知</a></td>
+            <td class="shikoku"><a href="#">徳島</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td class="okinawa"><a href="#">沖縄</a></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            </tbody>
+            </table>
+
+    </body>
+
+
+
+</head>
+</html>
