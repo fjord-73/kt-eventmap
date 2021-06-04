@@ -4,6 +4,75 @@
     width: 100%;
     margin-bottom: 50px;
 }
+.footer{
+    background-color: lightslategrey;
+    height:200px;
+    width: 100%;
+    float: right;
+}
+#popup-on{
+    display: none;
+}
+#how, #call{
+    text-align: right;
+    float: right;
+    padding: 12px 30px;
+    font-size: large;
+    color: white;
+    
+}
+
+#log{
+    text-align: right;
+    float: right;
+    padding: 24px 30px;
+    color: white;
+}
+#popup{
+    width:30%;
+    line-height:50px;
+    background:white;
+    padding:0 4%;
+    box-sizing:border-box;
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+  }
+  .icon-close{
+    background: #000;
+    color: #fff;
+    font-size: 30px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+  }
+  label{
+      display: block;
+  }
+  label span{
+    display:block;
+    background-color:lightslategrey;
+    color:black;
+    width:200px;
+    line-height:40px;
+    border-radius:4px;
+    text-align:center;
+  }
+  label span:hover{
+    cursor:pointer;
+  }
+  input[type="checkbox"]{
+    display:none;
+  }
+  /*checkboxがチェックの状態になったらpopupを表示させる*/
+  input[type="checkbox"]:checked + #popup{
+    display:block;
+  }
+
 .logo{
     float: left;
     margin:18px;
@@ -19,7 +88,7 @@
     float: right;
     padding-top: 18px;
     text-align: right;
-    margin: 0px;
+    margin: 0px 5px;
     color: rgb(15, 25, 29);
     border-bottom: rgb(19, 27, 31) 2px solid;
 }
@@ -48,31 +117,31 @@ table.jp-map {
     text-decoration: none;
     }
     .hokkaido {
-    background-color: #673AB7;
+    background-color: white;
     }
     .tohoku {
-    background-color: #3F51B5;
+    background-color: white;
     }
     .kanto {
-    background-color: #2196F3;
-    }
+        background-color: white;
+        }
     .chubu {
-    background-color: #009688;
+    background-color: white;
     }
     .kinki {
-    background-color: #FFC107;
+    background-color: white;
     }
     .chugoku {
-    background-color: #FF9800;
+    background-color: white;
     }
     .shikoku {
-    background-color: #FF5722;
+    background-color: white;
     }
     .kyushu {
-    background-color: #f44336;
+    background-color: white;
     }
     .okinawa {
-    background-color: #E91E63;
+    background-color: white;
     }
 .container{
     position: absolute;
@@ -92,4 +161,127 @@ table.jp-map {
 
 .container label{
     font-size: large;
+}
+.top_form{
+    text-align:center;
+    font-size:large;
+}
+
+.form_title{
+    text-align:center;
+    font-size:24px;
+}
+.top_form input{
+    margin-bottom:32px;
+    width:400px
+}
+.log {
+    display: block;
+}
+.log-imgs{
+    text-align: right;
+}
+.comment{
+    text-align: left;
+    font-size: 30px;
+    
+}
+.log-text{
+    font-weight:lighter;
+    font-size:24px;
+    float: left;
+    word-wrap: break-word;
+}
+.log-comment{
+    font-weight:lighter;
+    font-size:24px;
+    word-wrap: break-word;
+    margin: 2% 5% 0% 0%;
+}
+.places{
+    font-size: 30px;
+}
+.last{
+    font-weight: bold;
+}
+.border{
+    border-bottom: black solid 1px;
+}
+.form{
+    text-align: center;
+}
+#id_subject, #id_name, #id_mail{
+    width: 20%;
+}
+.back_img{
+    display: block;
+    padding-top: 5%;
+    width: 100%;
+}
+.desc1, .desc2{
+    box-sizing: border-box;
+}
+.sa{
+    opacity: 0;
+    transition: all .5s ease;
+}
+.sa.show {
+    opacity: 1;
+    transform: none;
+}
+.desc1 p, .desc2 p{
+    text-align: center;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 3%;
+    margin: 8% 10%;
+    font-size: 20px;
+    transform: translate(0, 100px);
+}
+.use{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+}
+.how{
+    box-sizing: border-box;
+    text-align: center;
+    word-wrap: break-word;
+}
+@media screen and (max-width: 1000px) {
+    .how br {
+      display: none;
+    }
+    .how span br{
+        display: block;
+
+    }
+  }
+.to1, .to2, .to3{
+    box-sizing: border-box;
+    background-color:rgb(122, 168, 54);
+    width: calc(100%/6);
+    padding: 5% 0%;
+    margin:calc(100%/12);
+    float: left;
+    font-size: large;
+}
+.links{
+    text-align: center;
+}
+.link{
+    line-height: 2.5;
+    background-color:#2196F3;
+    color: #fff;
+    width: 20%;
+    height: 15%;
+    margin-top: 50px;
+    display: inline-block;
+}
+.login{
+    margin-bottom: 55px;
+}
+.to1 span, .to2 span, .to3 span{
+    font-weight: bold;
+    font-size: 24px;
 }

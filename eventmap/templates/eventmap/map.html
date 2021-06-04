@@ -6,6 +6,7 @@
     {% csrf_token %}
     <title>Journey map</title>
     <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
+    <script src="{% static 'javascript/test.js' %}"></script>
     
     <body>
         <div class="top-header">
@@ -28,7 +29,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="hokkaido" colspan="3" rowspan="3" ><a href="#">北海道</a></td>
+            <td class="hokkaido" colspan="3" rowspan="3" id="hokkaido"><a href="{{user.id}}/7/log">北海道</a></td>
             </tr>
             <tr>
             <td></td>
@@ -70,7 +71,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="tohoku" colspan="2"><a href="#">青森</a></td>
+            <td class="tohoku" colspan="2" id="aomori"><a href="{{user.id}}/8/log">青森</a></td>
             </tr>
             <tr>
             <td></td>
@@ -84,8 +85,8 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="tohoku"><a href="#">秋田</a></td>
-            <td class="tohoku"><a href="#">岩手</a></td>
+            <td class="tohoku" id="akita"><a href="{{user.id}}/11/log">秋田</a></td>
+            <td class="tohoku" id="iwate"><a href="{{user.id}}/9/log">岩手</a></td>
             </tr>
             <tr>
             <td></td>
@@ -99,8 +100,8 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="tohoku"><a href="#">山形</a></td>
-            <td class="tohoku"><a href="#">宮崎</a></td>
+            <td class="tohoku" id="yamagata"><a href="{{user.id}}/12/log">山形</a></td>
+            <td class="tohoku" id="miyagi"><a href="{{user.id}}/10/log">宮城県</a></td>
             </tr>
             <tr>
             <td></td>
@@ -111,10 +112,10 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="chubu"><a href="#">石川</a></td>
-            <td class="chubu"><a href="#">富山</a></td>
-            <td class="chubu"><a href="#">新潟</a></td>
-            <td class="tohoku" colspan="2"><a href="#">福島</a></td>
+            <td class="chubu" id="isikawa"><a href="{{user.id}}/16/log">石川</a></td>
+            <td class="chubu" id="toyama"><a href="{{user.id}}/15/log">富山</a></td>
+            <td class="chubu" id="niigata"><a href="{{user.id}}/14/log">新潟</a></td>
+            <td class="tohoku" colspan="2" id="hukusima"><a href="{{user.id}}/13/log">福島</a></td>
             </tr>
             <tr>
             <td></td>
@@ -125,55 +126,55 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="chubu"><a href="#">福井</a></td>
-            <td class="chubu" rowspan="2"><a href="#">岐阜</a></td>
-            <td class="chubu" rowspan="2"><a href="#">長野</a></td>
-            <td class="kanto"><a href="#">群馬</a></td>
-            <td class="kanto"><a href="#">栃木</a></td>
+            <td class="chubu" id="hukui"><a href="{{user.id}}/17/log">福井</a></td>
+            <td class="chubu" rowspan="2" id="gihu"><a href="{{user.id}}/20/log">岐阜</a></td>
+            <td class="chubu" rowspan="2" id="nagano"><a href="{{user.id}}/19/log">長野</a></td>
+            <td class="kanto" id="gunnma"><a href="{{user.id}}/6/log">群馬</a></td>
+            <td class="kanto" id="tochigi"><a href="{{user.id}}/5/log">栃木</a></td>
             </tr>
             <tr>
-            <td class="kyushu"><a href="#">佐賀</a></td>
-            <td class="kyushu"><a href="#">福岡</a></td>
-            <td class="kyushu"><a href="#">大分</a></td>
-            <td class="chugoku" rowspan="2"><a href="#">山口</a></td>
-            <td class="chugoku"><a href="#">島根</a></td>
-            <td class="chugoku"><a href="#">鳥取</a></td>
-            <td class="kinki"><a href="#">兵庫</a></td>
-            <td class="kinki"><a href="#">京都</a></td>
-            <td class="kinki"><a href="#">滋賀</a></td>
-            <td class="kanto"><a href="#">埼玉</a></td>
-            <td class="kanto"><a href="#">茨城</a></td>
+            <td class="kyushu" id="saga"><a href="{{user.id}}/40/log">佐賀</a></td>
+            <td class="kyushu" id="hukuoka"><a href="{{user.id}}/39/log">福岡</a></td>
+            <td class="kyushu" id="ooita"><a href="{{user.id}}/43/log">大分</a></td>
+            <td class="chugoku" rowspan="2" id="yamaguti"><a href="{{user.id}}/34/log">山口</a></td>
+            <td class="chugoku" id="simane"><a href="{{user.id}}/31/log">島根</a></td>
+            <td class="chugoku" id="tottori"><a href="{{user.id}}/30/log">鳥取</a></td>
+            <td class="kinki" id="hyougo"><a href="{{user.id}}/27/log">兵庫</a></td>
+            <td class="kinki" id="kyoto"><a href="{{user.id}}/25/log">京都</a></td>
+            <td class="kinki" id="siga"><a href="{{user.id}}/24/log">滋賀</a></td>
+            <td class="kanto" id="saitama"><a href="{{user.id}}/3/log">埼玉</a></td>
+            <td class="kanto" id="ibaraki"><a href="{{user.id}}/4/log">茨城</a></td>
             </tr>
             <tr>
-            <td class="kyushu"><a href="#">長崎</a></td>
-            <td class="kyushu" rowspan="2"><a href="#">熊本</a></td>
-            <td class="kyushu" rowspan="2"><a href="#">宮崎</a></td>
-            <td class="chugoku"><a href="#">広島</a></td>
-            <td class="chugoku"><a href="#">岡山</a></td>
-            <td class="kinki"><a href="#">大阪</a></td>
-            <td class="kinki"><a href="#">奈良</a></td>
-            <td class="kinki"><a href="#">三重</a></td>
-            <td class="chubu"><a href="#">愛知</a></td>
-            <td class="chubu"><a href="#">山梨</a></td>
-            <td class="kanto"><a href="#">東京都</a></td>
-            <td class="kanto" rowspan="2"><a href="#">千葉</a></td>
-            </tr>
-            <tr>
-            <td></td>
-            <td class="shikoku"><a href="#">愛媛</a></td>
-            <td class="shikoku"><a href="#">香川</a></td>
-            <td></td>
-            <td class="kinki" colspan="2"><a href="#">和歌山</a></td>
-            <td></td>
-            <td></td>
-            <td class="chubu"><a href="#">静岡</a></td>
-            <td class="kanto"><a href="#">神奈川</a></td>
+            <td class="kyushu" id="nagasaki"><a href="{{user.id}}/41/log">長崎</a></td>
+            <td class="kyushu" rowspan="2" id="kumamoto"><a href="{{user.id}}/42/log">熊本</a></td>
+            <td class="kyushu" rowspan="2" id="miyazaki"><a href="{{user.id}}/44/log">宮崎</a></td>
+            <td class="chugoku" id="hirosima"><a href="{{user.id}}/33/log">広島</a></td>
+            <td class="chugoku" id="okayama"><a href="{{user.id}}/32/log">岡山</a></td>
+            <td class="kinki" id="oosaka"><a href="{{user.id}}/26/log">大阪</a></td>
+            <td class="kinki" id="nara"><a href="{{user.id}}/28/log">奈良</a></td>
+            <td class="kinki" id="mie"><a href="{{user.id}}/23/log">三重</a></td>
+            <td class="chubu" id="aichi"><a href="{{user.id}}/22/log">愛知</a></td>
+            <td class="chubu" id="yamanasi"><a href="{{user.id}}/18/log">山梨</a></td>
+            <td class="kanto" id="tokyo"><a href="{{user.id}}/1/log">東京都</a></td>
+            <td class="kanto" rowspan="2" id="chiba"><a href="{{user.id}}/46/log">千葉</a></td>
             </tr>
             <tr>
             <td></td>
-            <td class="kyushu" colspan="2"><a href="#">鹿児島</a></td>
-            <td class="shikoku"><a href="#">高知</a></td>
-            <td class="shikoku"><a href="#">徳島</a></td>
+            <td class="shikoku" id="ehime"><a href="{{user.id}}/37/log">愛媛</a></td>
+            <td class="shikoku" id="kagawa"><a href="{{user.id}}/36/log">香川</a></td>
+            <td></td>
+            <td class="kinki" colspan="2" id="wakayama"><a href="{{user.id}}/29/log">和歌山</a></td>
+            <td></td>
+            <td></td>
+            <td class="chubu" id="shizuoka"><a href="{{user.id}}/21/log">静岡</a></td>
+            <td class="kanto" id="kanagawa"><a href="{{user.id}}/2/log">神奈川</a></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td  id="kagosima" class="kyushu" colspan="2"><a href="{{user.id}}/45/log">鹿児島</a></td>
+            <td class="shikoku" id="kouchi"><a href="{{user.id}}/38/log">高知</a></td>
+            <td class="shikoku" id="tokusima"><a href="{{user.id}}/35/log">徳島</a></td>
             <td></td>
             <td></td>
             <td></td>
@@ -184,7 +185,7 @@
             <td></td>
             </tr>
             <tr>
-            <td class="okinawa"><a href="#">沖縄</a></td>
+            <td class="okinawa" id="okinawa"><a href="{{user.id}}/47/log">沖縄</a></td>
             <td></td>
             <td></td>
             <td></td>
@@ -198,7 +199,25 @@
             </tr>
             </tbody>
             </table>
+        <p class="form_title">登録フォーム</p>
+        <form class="top_form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="登録">
+        </form>
+        <div class="footer">
+            <a href="{% url 'howto' %}"><p id="how">How to</p></a>
+            <a href="{% url 'forms' %}"><p id="call">お問い合わせ</p></a>
+        
+        <label>
+            <span id="log">訪問箇所</span>
+            <input type="checkbox" id="popup_on">
 
+            <div id="popup"><span class="icon-close">×</span><br>47都道府県中 {{spot}} 箇所制覇<br>{{color}}</div>
+            
+        </label>
+        </div>
+        
     </body>
 
 

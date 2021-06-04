@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
+    <title>{{title}}</title>
+    
+    <div class="title">
+        <h1>{{msg|safe}}</h1>
+    </div>
+    <body class="form">
+        <form action="{% url 'forms' %}" method="POST">
+            {% csrf_token %}
+                {% for form_a in form %}
+                <div class="form_a">
+                    {{ form_a.errors }}
+                    {{ form_a.label_tag }}
+                    {{ form_a }}
+                    <p class="help">{{ form_a.help_text }}</p>
+                </div>
+                {% endfor %}
+                <input class="form_b" type="submit" value="click">
+        </form>
+        <a class="to_top" href="{% url 'login' %}"><p>TOP</p></a>
+    </body>
+
+
+
+</head>
+</html>

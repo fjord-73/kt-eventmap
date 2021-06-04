@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="itf-8">
+    
+    <title>what is Journey map</title>
+    <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
+    
+    <body>
+        <div class="top-header">
+            <h3 class="logo">Journey map</h3>
+            <a href="{% url 'login' %}"><h3 class="logout">ログイン</h3></a>
+            
+            <br>
+            
+        </div>
+        <img class="back_img" src="{% static 'backimg.png' %}">
+        <div class="sa desc1">
+            <p>こちらのサイトでは<br><br>旅行した場所を<br><br>都道府県ごとに記録し</p>
+        </div>
+        <div class="sa desc2">
+            <p>登録することによって<br><br>白地図を埋めていく<br><br>サイトとなっております</p>
+        </div>
+        <p class="use">利用方法</p>
+        <div class="how">
+            <p class="to1"><span>step1<br></span>まずはアカウント登録。<br>登録フォームから<br>簡単に登録出来ます。<br>(登録確認メールのみ送付されます)</p>
+            <p class="to2"><span>step2<br></span>ログイン出来たら下の<br>登録フォームから<br>旅行した県や日付を登録<br>その箇所に色が付きます。</p>
+            <p class="to3"><span>step3<br></span>振り返りたい時は色が<br>ついた県をクリック。<br>そこを旅行した時の<br>思い出が振り返りれます。</p>
+        </div>
+        <div class="links">
+            <a href="{% url 'entry' %}"><button class="link" type="button">登録はこちら！(無料)</button></a>
+            <a href="{% url 'login' %}"><p class="login">ログインはこちら</p></a>
+        </div>
+        <div class="footer">
+            <a href="{% url 'forms' %}"><p id="call">お問い合わせ</p></a>
+        </div>
+        <script src="{% static 'javascript/test.js' %}"></script>
+    </body>
+
+
+
+</head>
+</html>
