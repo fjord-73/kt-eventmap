@@ -32,7 +32,7 @@
         </div>
         
         <br>
-        <a href="http://localhost:8000/eventmap/{{user.id}}"><p class="last">TOPページから登録出来ます</p></a>
+        <a href="{% url 'map' user_id=user.id %}"><p class="last">TOPページから登録出来ます</p></a>
     </body>
 
 

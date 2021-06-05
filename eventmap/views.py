@@ -36,7 +36,7 @@ class Login(LoginView):
     template_name = 'eventmap/login.html'
     def get_redirect_url(self):
         user_id = self.request.user.id
-        settings.LOGIN_REDIRECT_URL = '/kt-eventmap/'+str(user_id)
+        settings.LOGIN_REDIRECT_URL = '/eventmap/'+str(user_id)
     
 class Top(LoginRequiredMixin, generic.TemplateView):
     template_name = 'eventmap/map.html'
@@ -110,6 +110,7 @@ class Top(LoginRequiredMixin, generic.TemplateView):
     
 class Logout(LogoutView):
     template_name = 'eventmap.html'
+   
 
 def entry(request):
     if request.method == 'POST':

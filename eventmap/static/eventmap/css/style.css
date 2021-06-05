@@ -77,6 +77,8 @@
     float: left;
     margin:18px;
     color: linen;
+    font-size: 24px;
+    font-weight: bold;
 }
 .login-btn{
     padding: 18px 150px 0px 0px;
@@ -241,7 +243,8 @@ table.jp-map {
 .use{
     text-align: center;
     padding-top: 20px;
-    font-size: 25px;
+    font-size: 32px;
+    font-weight: bold;
 }
 .how{
     box-sizing: border-box;
