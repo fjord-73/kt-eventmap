@@ -146,8 +146,8 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 LOGIN_URL = '/login' 
-LOGIN_REDIRECT_URL = '/eventmap/1'
-LOGOUT_REDIRECT_URL= '/login'
+LOGIN_REDIRECT_URL = '/kt-eventmap/1'
+LOGOUT_REDIRECT_URL= 'kt-eventmap/login'
 MEDIA_ROOT =os.path.join(BASE_DIR, "media/")
 MEDIA_URL = "/media/"
 
