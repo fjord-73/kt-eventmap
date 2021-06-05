@@ -57,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'django_app.urls'
@@ -151,3 +152,4 @@ LOGOUT_REDIRECT_URL= 'kt-eventmap/login'
 MEDIA_ROOT =os.path.join(BASE_DIR, "media/")
 MEDIA_URL = "/media/"
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
