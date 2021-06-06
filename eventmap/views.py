@@ -1085,7 +1085,7 @@ def log41(request, user_id):
         'data':data,
         'error':error,
     }
-    return render(request, 'eventmap/log42.html', params)
+    return render(request, 'eventmap/log41.html', params)
 
 def log42(request, user_id):
     user = get_object_or_404(User, pk=user_id)
@@ -1108,7 +1108,7 @@ def log42(request, user_id):
         'data':data,
         'error':error,
     }
-    return render(request, 'eventmap/log43.html', params)
+    return render(request, 'eventmap/log42.html', params)
 
 def log43(request, user_id):
     user = get_object_or_404(User, pk=user_id)
@@ -1131,7 +1131,7 @@ def log43(request, user_id):
         'data':data,
         'error':error,
     }
-    return render(request, 'eventmap/log44.html', params)
+    return render(request, 'eventmap/log43.html', params)
 
 def log44(request, user_id):
     user = get_object_or_404(User, pk=user_id)
@@ -1154,7 +1154,7 @@ def log44(request, user_id):
         'data':data,
         'error':error,
     }
-    return render(request, 'eventmap/log45.html', params)
+    return render(request, 'eventmap/log44.html', params)
 
 def log45(request, user_id):
     user = get_object_or_404(User, pk=user_id)
@@ -1177,7 +1177,7 @@ def log45(request, user_id):
         'data':data,
         'error':error,
     }
-    return render(request, 'eventmap/log46.html', params)
+    return render(request, 'eventmap/log45.html', params)
 
 def log47(request, user_id):
     user = get_object_or_404(User, pk=user_id)
