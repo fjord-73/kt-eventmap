@@ -35,21 +35,10 @@ try:
 except ImportError:
     pass
 
-if not DEBUG:
+if DEBUG == False:
+    
     import django_heroku
     django_heroku.settings(locals())
-    SECRET_KEY = os.environ['SECRET_KEY']
-
-    AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
-    AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
-    AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
-
-    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-    S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-    MEDIA_URL = S3_URL
-
-    AWS_S3_FILE_OVERWRITE = False
-    AWS_DEFAULT_ACL = None
 
 
 db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
@@ -172,4 +161,15 @@ STATICFILES_DIRS = (
 LOGIN_URL = '/login' 
 LOGIN_REDIRECT_URL = '/eventmap/1'
 LOGOUT_REDIRECT_URL= '/login'
+
+AWS_ACCESS_KEY_ID = 'AKIA2HUCT6XGHRCGOTG5'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'kt-eventmap'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_URL = S3_URL
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
 
