@@ -80,6 +80,9 @@ window.onload = function() {
   if(ff.match("島根県")){
     document.getElementById('simane').style.backgroundColor= '#FF9800';
   }
+  if(ff.match("鳥取県")){
+    document.getElementById('tottori').style.backgroundColor= '#FF9800';
+  }
   if(ff.match("兵庫県")){
     document.getElementById('hyougo').style.backgroundColor= '#FFC107';
   }

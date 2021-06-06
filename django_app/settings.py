@@ -23,7 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '+=)vm_y^)kk#b65wh%s9yc503#cl*2ewd4)+jnhbe6=cbm!9sk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = False
+
+MEDIA_ROOT =os.path.join(BASE_DIR, "media/")
+MEDIA_URL = "/media/"
+
+
 try:
     from .local_settings import *
 except ImportError:
@@ -166,6 +172,4 @@ STATICFILES_DIRS = (
 LOGIN_URL = '/login' 
 LOGIN_REDIRECT_URL = '/eventmap/1'
 LOGOUT_REDIRECT_URL= '/login'
-MEDIA_ROOT =os.path.join(BASE_DIR, "media/")
-MEDIA_URL = "/media/"
 
