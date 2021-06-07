@@ -161,7 +161,7 @@ def log2(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '神奈川県')
+    test = Visit.objects.filter(prefecture__exact = '神奈川県',author_id = user_id)
     
     url_id = request.path
     login_user_id = request.user.id
@@ -185,7 +185,7 @@ def log3(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '埼玉県')
+    test = Visit.objects.filter(prefecture__exact = '埼玉県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -209,7 +209,7 @@ def log4(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '茨城県')
+    test = Visit.objects.filter(prefecture__exact = '茨城県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -233,7 +233,7 @@ def log5(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '栃木県')
+    test = Visit.objects.filter(prefecture__exact = '栃木県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -257,7 +257,7 @@ def log6(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '群馬県')
+    test = Visit.objects.filter(prefecture__exact = '群馬県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -281,7 +281,7 @@ def log7(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '北海道')
+    test = Visit.objects.filter(prefecture__exact = '北海道',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -305,7 +305,7 @@ def log8(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '青森県')
+    test = Visit.objects.filter(prefecture__exact = '青森県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -329,7 +329,7 @@ def log9(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '岩手県')
+    test = Visit.objects.filter(prefecture__exact = '岩手県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -353,7 +353,7 @@ def log10(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '宮城県')
+    test = Visit.objects.filter(prefecture__exact = '宮城県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -377,7 +377,7 @@ def log11(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '秋田県')
+    test = Visit.objects.filter(prefecture__exact = '秋田県',author_id = user_id)
 
     url_id = request.path
     login_user_id = request.user.id
@@ -401,7 +401,7 @@ def log12(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '山形県')
+    test = Visit.objects.filter(prefecture__exact = '山形県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -424,7 +424,7 @@ def log13(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '福島県')
+    test = Visit.objects.filter(prefecture__exact = '福島県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -447,7 +447,7 @@ def log14(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '新潟県')
+    test = Visit.objects.filter(prefecture__exact = '新潟県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -470,7 +470,7 @@ def log15(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '富山県')
+    test = Visit.objects.filter(prefecture__exact = '富山県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -493,7 +493,7 @@ def log16(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '石川県')
+    test = Visit.objects.filter(prefecture__exact = '石川県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -516,7 +516,7 @@ def log17(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '福井県')
+    test = Visit.objects.filter(prefecture__exact = '福井県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -539,7 +539,7 @@ def log18(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '山梨県')
+    test = Visit.objects.filter(prefecture__exact = '山梨県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -562,7 +562,7 @@ def log19(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '長野県')
+    test = Visit.objects.filter(prefecture__exact = '長野県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -585,7 +585,7 @@ def log20(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '岐阜県')
+    test = Visit.objects.filter(prefecture__exact = '岐阜県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -608,7 +608,7 @@ def log21(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '静岡県')
+    test = Visit.objects.filter(prefecture__exact = '静岡県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -631,7 +631,7 @@ def log22(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '愛知県')
+    test = Visit.objects.filter(prefecture__exact = '愛知県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -654,7 +654,7 @@ def log23(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '三重県')
+    test = Visit.objects.filter(prefecture__exact = '三重県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -677,7 +677,7 @@ def log24(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '滋賀県')
+    test = Visit.objects.filter(prefecture__exact = '滋賀県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -700,7 +700,7 @@ def log25(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '京都府')
+    test = Visit.objects.filter(prefecture__exact = '京都府',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -723,7 +723,7 @@ def log26(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '大阪府')
+    test = Visit.objects.filter(prefecture__exact = '大阪府',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -746,7 +746,7 @@ def log27(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '兵庫県')
+    test = Visit.objects.filter(prefecture__exact = '兵庫県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -769,7 +769,7 @@ def log28(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '奈良県')
+    test = Visit.objects.filter(prefecture__exact = '奈良県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -792,7 +792,7 @@ def log29(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '和歌山県')
+    test = Visit.objects.filter(prefecture__exact = '和歌山県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -815,7 +815,7 @@ def log30(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '鳥取県')
+    test = Visit.objects.filter(prefecture__exact = '鳥取県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -838,7 +838,7 @@ def log31(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '島根県')
+    test = Visit.objects.filter(prefecture__exact = '島根県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -861,7 +861,7 @@ def log32(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '岡山県')
+    test = Visit.objects.filter(prefecture__exact = '岡山県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -884,7 +884,7 @@ def log33(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '広島県')
+    test = Visit.objects.filter(prefecture__exact = '広島県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -907,7 +907,7 @@ def log34(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '山口県')
+    test = Visit.objects.filter(prefecture__exact = '山口県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -930,7 +930,7 @@ def log35(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '徳島県')
+    test = Visit.objects.filter(prefecture__exact = '徳島県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -953,7 +953,7 @@ def log36(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '香川県')
+    test = Visit.objects.filter(prefecture__exact = '香川県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -976,7 +976,7 @@ def log37(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '愛媛県')
+    test = Visit.objects.filter(prefecture__exact = '愛媛県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -999,7 +999,7 @@ def log38(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '高知県')
+    test = Visit.objects.filter(prefecture__exact = '高知県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1022,7 +1022,7 @@ def log39(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '福岡県')
+    test = Visit.objects.filter(prefecture__exact = '福岡県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1045,7 +1045,7 @@ def log40(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '佐賀県')
+    test = Visit.objects.filter(prefecture__exact = '佐賀県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1068,7 +1068,7 @@ def log41(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '長崎県')
+    test = Visit.objects.filter(prefecture__exact = '長崎県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1091,7 +1091,7 @@ def log42(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '熊本県')
+    test = Visit.objects.filter(prefecture__exact = '熊本県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1114,7 +1114,7 @@ def log43(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '大分県')
+    test = Visit.objects.filter(prefecture__exact = '大分県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1137,7 +1137,7 @@ def log44(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '宮崎県')
+    test = Visit.objects.filter(prefecture__exact = '宮崎県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1160,7 +1160,7 @@ def log45(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '鹿児島県')
+    test = Visit.objects.filter(prefecture__exact = '鹿児島県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1183,7 +1183,7 @@ def log47(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '沖縄県')
+    test = Visit.objects.filter(prefecture__exact = '沖縄県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -1206,7 +1206,7 @@ def log46(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '千葉県')
+    test = Visit.objects.filter(prefecture__exact = '千葉県',author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
