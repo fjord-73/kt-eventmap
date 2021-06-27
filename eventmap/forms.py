@@ -1,5 +1,9 @@
 from django import forms
+from django.core import files
+from django.db.models import fields
 from django.forms.forms import Form
+from django.http import request
+
 from.models import Visit
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
@@ -19,6 +23,12 @@ class SignUpForm(UserCreationForm):
         help_text='※有効なメールアドレスを入力してください。',
         label='Eメールアドレス'
     )
+    username = forms.CharField(
+        max_length=30,
+        help_text='※この項目は必須です。30文字以下にしてください。',
+        label='ユーザー名'
+    )
+    
     class Meta:
         model = User
         fields = ('username', 'email', 'password1',)
@@ -87,18 +97,36 @@ class UserForm(forms.Form):
     startrip = forms.DateField(widget=forms.SelectDateWidget(years=[x for x in range(2000, 2028)]),label='旅行開始日')
     endtrip = forms.DateField(widget=forms.SelectDateWidget(years=[x for x in range(2000, 2028)]),label='旅行終了日')
     photo = forms.ImageField(label='お気に入りの一枚')
+    public = forms.BooleanField(label='他ユーザーに公開', required=False)
     comment = forms.CharField(
         label='コメント',
         widget=forms.Textarea,
         max_length=200,
     )
     
+
     def url(self):
-        return self.photo.url
+        return self.photo.url+self.startrip+self.endtrip
 
 class ConectForm(forms.Form):
     subject = forms.CharField(label='件名', max_length=10)
     name = forms.CharField(label='name')
     mail = forms.EmailField(label='mail', help_text="※ご確認のうえ、正しく入力してください")
     text = forms.CharField(label='text',widget=forms.Textarea)
-
+    
+    
+class Visiter(forms.ModelForm):
+    startrip = forms.DateField(widget=forms.SelectDateWidget(years=[x for x in range(2000, 2028)]),label='旅行開始日')
+    endtrip = forms.DateField(widget=forms.SelectDateWidget(years=[x for x in range(2000, 2028)]),label='旅行終了日')
+    class Meta:
+        model = Visit
+        fields = ['prefecture','place','startrip','endtrip','photo','public','comment']
+        labels = {
+            'prefecture':'都道府県',
+            'place':'訪問場所',
+            'photo':'お気に入りの一枚',
+            'public':'他ユーザーに公開',
+            'comment':'コメント',
+        }
+        def url(self):
+            return self.photo.url+self.startrip+self.endtrip

@@ -3,6 +3,7 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
+    <meta name=”viewport” content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
     <title>{{title}}</title>
     
@@ -22,7 +23,7 @@
                 {% endfor %}
                 <input class="form_b" type="submit" value="click">
         </form>
-        <a class="to_top" href="{% url 'login' %}"><p>TOP</p></a>
+        <input class="btn" type="button" value="戻る" onClick="javascript:history.go(-1);">
     </body>
 
 

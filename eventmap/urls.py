@@ -1,3 +1,4 @@
+from os import name
 from django.urls import path
 from . import views
 from .forms import LoginForm
@@ -58,5 +59,8 @@ urlpatterns = [
     path('eventmap/<int:user_id>/47/log', views.log47, name='log47'),
     path('eventmap/forms', views.forms, name='forms'),
     path('eventmap/howto', views.howto, name='howto'),
-    
+    path('edit/<int:num>/<int:user_id>', views.edit, name='edit'),
+    path('delete/<int:num>/<int:user_id>', views.delete, name='delete'),
+    path('eventmap/<int:user_id>/global', views.public, name='public'),
+    path('eventmap/news', views.news, name='news'),
 ]

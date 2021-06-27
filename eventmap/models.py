@@ -2,6 +2,7 @@
 from django.db import models
 import os
 from django.forms import widgets
+from django.forms.models import ModelForm
 from imagekit.models import ImageSpecField, ProcessedImageField
 from imagekit.processors import ResizeToFill
 from django.contrib.auth.models import User
@@ -71,6 +72,10 @@ class Visit(models.Model):
                         options={'quality': 75}
                         )
     comment = models.CharField(max_length=240)
+    public = models.BooleanField(
+        verbose_name='',
+        default=False,
+    )
 
     author = models.ForeignKey(User,
         on_delete=models.CASCADE,

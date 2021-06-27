@@ -3,7 +3,7 @@
 <html lang="ja">
 <head>
     <meta charset="itf-8">
-    
+    <meta name=”viewport” content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title>what is Journey map</title>
     <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
     
@@ -17,10 +17,10 @@
         </div>
         <img class="back_img" src="{% static 'backimg.png' %}">
         <div class="sa desc1">
-            <p>こちらのサイトでは<br><br>旅行した場所を<br><br>都道府県ごとに記録し</p>
+            <p class="slide1">こちらのサイトでは<br><br>旅行した場所を<br><br>都道府県ごとに記録し</p>
         </div>
         <div class="sa desc2">
-            <p>登録することによって<br><br>白地図を埋めていく<br><br>サイトとなっております</p>
+            <p class="slide2">登録することによって<br><br>白地図を埋めていく<br><br>サイトとなっております</p>
         </div>
         <p class="use">利用方法</p>
         <div class="how">
@@ -30,10 +30,11 @@
         </div>
         <div class="links">
             <a href="{% url 'entry' %}"><button class="link" type="button">登録はこちら！(無料)</button></a>
-            <a href="{% url 'login' %}"><p class="login">ログインはこちら</p></a>
+            <a href="{% url 'login' %}"><p class="login1">ログインはこちら</p></a>
         </div>
         <div class="footer">
-            <a href="{% url 'forms' %}"><p id="call">お問い合わせ</p></a>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Let&#39;s use the Journey map!" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="{% url 'forms' %}"><p id="call1">お問い合わせ</p></a>
         </div>
         <script src="{% static 'javascript/test.js' %}"></script>
     </body>

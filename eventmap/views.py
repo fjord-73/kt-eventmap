@@ -3,17 +3,18 @@ from functools import update_wrapper
 from django import views
 from django.core.files import uploadedfile
 from django.db.models.base import Model
-from django.db.models.expressions import Func
+from django.db.models.expressions import F, Func
 from django.db.models.fields.files import ImageField
 from django.db.models.query import Prefetch
 from django.db import models
+from django.forms.fields import BooleanField
 from django.forms.forms import Form
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, Http404, request, QueryDict
 from django.utils.translation import deactivate, ugettext
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import FormView, CreateView, UpdateView
-from .forms import LoginForm, SignUpForm, UserForm, ConectForm
+from .forms import LoginForm, SignUpForm, UserForm, ConectForm, Visiter
 from django.views import generic
 from . import models
 from django.conf import settings
@@ -88,6 +89,7 @@ class Top(LoginRequiredMixin, generic.TemplateView):
         photo_get = form.files.get('photo')
         comment_get = form.data['comment']
         author_get = self.request.user
+        
         you = Visit.objects.create(
             prefecture = prefecture_get,
             place = place_get,
@@ -96,7 +98,7 @@ class Top(LoginRequiredMixin, generic.TemplateView):
             photo = photo_get,
             comment = comment_get,
             author = author_get,
-             
+            
             #user.save()
         )
         
@@ -786,7 +788,7 @@ def log29(request, user_id):
     user = get_object_or_404(User, pk=user_id)
     data = ""
     error = 'no data'
-    test = Visit.objects.filter(prefecture__exact = '和歌山県',author_id = user_id)
+    test = Visit.objects.filter(prefecture__exact = '和歌山県', author_id = user_id)
     url_id = request.path
     login_user_id = request.user.id
     
@@ -803,6 +805,7 @@ def log29(request, user_id):
         'data':data,
         'error':error,
     }
+    
     return render(request, 'eventmap/log29.html', params)
 
 def log30(request, user_id):
@@ -1245,3 +1248,65 @@ def forms(request):
 
 def howto(request):
     return render(request, 'eventmap/howto.html')
+
+def edit(request,num,user_id):
+    
+    obj = Visit.objects.get(id=num)
+    url_id = request.path
+    login_user_id = request.user.id
+    
+    if int(login_user_id) == int(url_id[-1]):
+        None
+    else:
+        raise Http404("権限がありません")
+
+    if (request.method == 'POST'):
+        
+        formss = Visiter(request.POST,request.FILES, instance=obj)
+        formss.save()
+        return redirect('map',user_id)
+        
+    params = {
+        'id':num,
+        'form': Visiter(instance=obj),
+    }
+    return render(request,'eventmap/edit.html',params)
+
+def delete(request, num, user_id):
+    obj = Visit.objects.get(id=num)
+
+    url_id = request.path
+    login_user_id = request.user.id
+    
+    if int(login_user_id) == int(url_id[-1]):
+        None
+    else:
+        raise Http404("権限がありません")
+    if (request.method == 'POST'):
+        obj.delete()
+        
+        return redirect('map',user_id)
+
+    params = {
+        'id':num,
+        'obj':obj,
+    }
+    return render(request, 'eventmap/delete.html', params)
+        
+def public(request, user_id):
+    user = get_object_or_404(User, pk=user_id)
+    data = ""
+    error = 'no data'
+    test = Visit.objects.filter(public = True)
+
+    if test.count() >= 1:
+        data = test
+        error = ""
+    params = {
+        'data':data,
+        'error':error,
+    }
+    return render(request, 'eventmap/public.html', params)
+
+def news(request):
+    return render(request, 'eventmap/news.html')

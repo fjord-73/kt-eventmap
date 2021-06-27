@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="itf-8">
+    <meta name=”viewport” content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <title>お知らせ</title>
+    <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+    
+    <body>
+        <div class="top-header">
+            <h3 class="logo">Journey map</h3>         
+            <br>
+        </div>
+        <h1 class="news">お知らせ</h1>
+        <ul class="topic">
+            <li class="news_top">6/26 更新のお知らせ</li>
+            <p class="news_text">サイトを更新しました。新たにみんなの投稿ページ、修正削除機能を追加してデザインを変更しました。</p>
+            <li class="news_top">6/7 サイト公開完了</li>
+            <p class="news_text">サイトを公開しました。主に日本全国の旅行したことある都道府県の思い出を記録して、白地図を埋めていくサイトになっております。是非ご利用ください</p>
+        </ul>
+        <input type="button" value="戻る" class="btn1" onClick="javascript:history.go(-1);">
+        
+    </body>
+
+
+
+</head>

@@ -2,18 +2,19 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="itf-8">
     
+    <meta name=”viewport” content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+    <meta charset="itf-8">
     <title>ログイン画面</title>
     <link rel="stylesheet"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"crossorigin="anonymous"/>
     <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
     <body class="text-center">
         
-        <div class="container"> 
+        <div class="container1"> 
              
-            <div id="login-row" class="row justify-content-center align-items-center">
-                <div id="login-column" class="col-md-6">
+            
+                <div id="login-column" class="">
                     <div id="login-box" class="col-md-12">
                         <h2>Login</h2>
                             <form class="form-signin" method="POST">
@@ -36,7 +37,7 @@
                             <br>
                             <a href="{% url 'entry' %}"><p mt-2>ユーザー登録はこちら(無料)</p></a>
                             </form>
-                        </div> 
+                        
                     </div>
                 </div>    
         </div>

@@ -147,6 +147,8 @@ window.onload = function() {
     document.getElementById('okinawa').style.backgroundColor= '#E91E63';
   }
 }
+
+
 var scrollAnimationElm = document.querySelectorAll('.sa');
 var scrollAnimationFunc = function() {
   for(var i = 0; i < scrollAnimationElm.length; i++) {
@@ -158,3 +160,5 @@ var scrollAnimationFunc = function() {
 }
 window.addEventListener('load', scrollAnimationFunc);
 window.addEventListener('scroll', scrollAnimationFunc);
+
+

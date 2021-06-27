@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="itf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, shrink-to-fit=no">
+    <title>編集画面</title>
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    crossorigin="anonymous"/>
+
+</head>
+<body class="container">
+    <h1 class="display-4" text-primary>編集</h1>
+    <form action="{% url 'edit' id user.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table table-responsive-sm">
+            <tr><th></th>
+                <td>
+                    
+                    {{form.as_table}} 
+            </td></tr>
+        </table>
+        <input type="submit"  value="変更" class="btn btn-primary" >
+        <input type="button" value="戻る" onClick="javascript:history.go(-1);">
+    </form>
+</body>
+</html>

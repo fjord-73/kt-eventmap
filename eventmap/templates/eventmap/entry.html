@@ -3,13 +3,13 @@
 <html lang="ja">
 <head>
     <meta charset="utf-8">
-    
+    <meta name=”viewport” content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <title>登録フォーム</title>
     <link rel="stylesheet" href="{% static 'eventmap/css/style.css' %}" />
     <div class="title">
         <h1>ユーザー登録フォーム</h1>
     </div>
-    <body class="container">
+    <body class="container2">
         
         <form method="post">
             {% csrf_token %}
@@ -18,7 +18,7 @@
                 <br>                       
                 
                 <p class="form-text">※登録が完了したらログインページからログインして下さい</p>   
-                <button type="submit">ユーザー登録</button>
+                <button class="btn2" type="submit">ユーザー登録！</button>
             </form>
         </form>
         

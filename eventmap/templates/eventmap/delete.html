@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <mata charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>削除画面</title>
+    <link rel="stylesheet" 
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    crossorigin="anonymous"/>
+    
+    </head>
+<body class="container">
+
+    <h1 class="display-8" text-primary>削除確認</h1>
+    <p class="h5 mt-4">レコードの削除</p>
+    
+    
+   
+    <table class="table table-responsive-sm">
+        <tr><th>都道府県</th><td>{{obj.prefecture}}</td></tr>
+        <tr><th>箇所</th><td>{{obj.place}}</td></tr>
+        <tr><th>旅行日</th><td>{{obj.startrip}}</td></tr>
+        <tr><th>終了日</th><td>{{obj.endtrip}}</td></tr>
+        <tr><th>コメント</th><td>{{obj.comment}}</td></tr>
+    </table>
+    <form action="{% url 'delete' id user.id %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <tr><th></th><td>
+        <p>削除します。よろしければ削除ボタンをクリックしてください</p>
+        <input type="submit" value="削除" class="btn btn-primary">
+        <input type="button" value="戻る" onClick="javascript:history.go(-1);">
+
+    </td></tr>
+    </form>
+    
+</body>
+</html>
