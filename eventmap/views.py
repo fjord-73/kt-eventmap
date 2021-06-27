@@ -52,13 +52,7 @@ class Top(LoginRequiredMixin, generic.TemplateView):
         else:
             raise Http404("権限がありません")
 
-        prefect = "東京都"
-        color = Visit.objects.filter(prefecture__exact = prefect, author_id = user_id)
         
-        if color.count() >1:
-            color = prefect
-        else:
-            color = ""
         location = Visit.objects.values('prefecture').filter(author_id = user_id)
         prefect_all = ""
         spot = 0
