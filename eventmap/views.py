@@ -1190,11 +1190,11 @@ def log47(request, user_id):
         raise Http404("権限がありません")
 
     if test.count() >= 1:
-        data = test
+        
         error = ""
     params = {
         'user':user,
-        'data':data,
+        'data':test,
         'error':error,
     }
     return render(request, 'eventmap/log47.html', params)
