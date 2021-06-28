@@ -84,4 +84,4 @@ class Visit(models.Model):
         return str(self.prefecture)+str(self.place)+str(self.comment)
     def url(self):
         return self.photo.url
-#600*400なので横画像対象と記載
+
