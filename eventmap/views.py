@@ -76,8 +76,8 @@ class Top(LoginRequiredMixin, generic.TemplateView):
     def post(self, request, *args, **kwargs):
         form = UserForm(request.POST, request.FILES)
         
-        #47のリスト
-
+        check = request.POST.get('public')
+        
         prefecture_get = form.data['prefecture']
         place_get = form.data['place']
         year = form.data['startrip_year']
@@ -90,17 +90,32 @@ class Top(LoginRequiredMixin, generic.TemplateView):
         comment_get = form.data['comment']
         author_get = self.request.user
         
-        you = Visit.objects.create(
-            prefecture = prefecture_get,
-            place = place_get,
-            startrip = year+'-'+month+'-'+day,
-            endtrip = yeara+'-'+montha+'-'+daya,
-            photo = photo_get,
-            comment = comment_get,
-            author = author_get,
+        if check == None:
+            Visit.objects.create(
+                prefecture = prefecture_get,
+                place = place_get,
+                startrip = year+'-'+month+'-'+day,
+                endtrip = yeara+'-'+montha+'-'+daya,
+                photo = photo_get,
+                comment = comment_get,
+                author = author_get,
+            )
+        else:
+            check = True
+            Visit.objects.create(
+                prefecture = prefecture_get,
+                place = place_get,
+                startrip = year+'-'+month+'-'+day,
+                endtrip = yeara+'-'+montha+'-'+daya,
+                photo = photo_get,
+                public = check,
+                comment = comment_get,
+                author = author_get,
+            )
             
-            #user.save()
-        )
+            
+            
+        
         
         return self.get(request, *args, **kwargs)
     

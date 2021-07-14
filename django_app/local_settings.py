@@ -9,7 +9,7 @@ DATABASES = {
 }
 
 
-SECRET_KEY = ''
+SECRET_KEY = 'j7ZpeG04d/l7fUQKGUJUTPzDtx8aBfnKe4K8tRz2'
 
 
 

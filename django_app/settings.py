@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = '+=)vm_y^)kk#b65wh%s9yc503#cl*2ewd4)+jnhbe6=cbm!9sk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -111,11 +111,11 @@ DATABASES['default'].update(db_from_env)
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = '' 
+DEFAULT_FROM_EMAIL = 'kimura443number@gmail.com' 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
-EMAIL_PORT = 
+EMAIL_HOST_USER = 'kimura443number@gmail.com'
+EMAIL_HOST_PASSWORD = 'qcqufnysingssygq'
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 # Password validation
@@ -162,8 +162,8 @@ LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/eventmap/1'
 LOGOUT_REDIRECT_URL= '/login'
 
-AWS_ACCESS_KEY_ID = ''
-AWS_SECRET_ACCESS_KEY = ''
+AWS_ACCESS_KEY_ID = 'AKIA2HUCT6XGHRCGOTG5'
+AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'kt-eventmap'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
