@@ -96,7 +96,7 @@ class UserForm(forms.Form):
     )
     startrip = forms.DateField(widget=forms.SelectDateWidget(years=[x for x in range(2000, 2028)]),label='旅行開始日')
     endtrip = forms.DateField(widget=forms.SelectDateWidget(years=[x for x in range(2000, 2028)]),label='旅行終了日')
-    photo = forms.ImageField(label='お気に入りの一枚',  required=False)
+    photo = forms.ImageField(label='お気に入りの一枚(任意)',  required=False)
     public = forms.BooleanField(label='他ユーザーに公開', required=False)
     comment = forms.CharField(
         label='コメント',
